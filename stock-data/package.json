@@ -9,6 +9,8 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@polygon.io/client-js": "^7.3.2"
+    "@polygon.io/client-js": "^7.3.2",
+    "@supabase/supabase-js": "^2.46.1",
+    "date-fns": "^4.1.0"
   }
 }
