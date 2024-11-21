@@ -14,7 +14,7 @@ The following tools are chosen with just one metric in head: time to market; it 
 
 The tools that will help with speedy delivery:
 
-### Next.js, Tailwind & Shadcn
+### Next.js, React-Query, Tailwind & Shadcn
 
 I think that the combo is great, and will help you to build a application in couple of hours. 
 
@@ -70,6 +70,7 @@ Generate a simple layout with shadcn components for stock monitoring:
 - Add chart (https://ui.shadcn.com/docs/components/chart#add-a-grid) (< 5 minutes)
 - Frontend is ready (from UI perspective), its time to fetch stock data
 - Initialized Bun, create simple script to get stock data (polygon.io - the first result in google by typing stock data api)
+- Install Supabase & React Query
 
 # Final words
 

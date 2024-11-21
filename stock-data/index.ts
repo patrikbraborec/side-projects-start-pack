@@ -11,7 +11,7 @@ const supabaseClient = createClient(
 );
 
 (async function () {
-  const yesterday = format(subDays(new Date(), 1), "yyyy-MM-dd");
+  const yesterday = format(subDays(new Date(), 3), "yyyy-MM-dd");
 
   try {
     const stockData = await polygonClient.stocks.dailyOpenClose(
@@ -37,7 +37,7 @@ const supabaseClient = createClient(
       low: stockData.low,
     };
 
-    const stockNewsToInesrt = stockNews?.results?.map((result) => {
+    const stockNewsToInsert: Array<{}> = stockNews?.results?.map((result) => {
       return {
         ticker: TICKER,
         title: result.title,
@@ -51,7 +51,7 @@ const supabaseClient = createClient(
 
     const { error: stockDataError } = await supabaseClient
       .from("stocks")
-      .insert(stockDataToInsert);
+      .upsert(stockDataToInsert, { onConflict: "timestamp" });
 
     if (stockDataError) {
       throw stockDataError;
@@ -59,7 +59,7 @@ const supabaseClient = createClient(
 
     const { error: stockNewsError } = await supabaseClient
       .from("news")
-      .insert(stockNewsToInesrt);
+      .upsert(stockNewsToInsert, { onConflict: "article_url" });
 
     if (stockNewsError) {
       throw stockNewsError;
