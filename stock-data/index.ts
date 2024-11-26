@@ -69,7 +69,10 @@ const supabaseClient = createClient(
     if (stockNewsError) {
       throw stockNewsError;
     }
+
+    console.log("Done 🚀");
   } catch (error) {
     console.error(error);
+    process.exit(1);
   }
 })();

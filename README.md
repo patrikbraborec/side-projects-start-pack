@@ -44,7 +44,7 @@ The interesting thing is Bun (A fast JavaSript runtime similar to Node.js). It i
 
 ## Infrastructure
 
-The best thing is to use GitHub for source code control, and then based on your need you can use variety of tools. I mostly prefer [Cloudflare](https://www.cloudflare.com/) and [Railway.app](https://railway.app/)
+The best thing is to use GitHub for source code control, and then based on your need you can use variety of tools. I mostly prefer [Cloudflare](https://www.cloudflare.com/) and [render.com](https://render.com/) (I run cron job over here)
 
 ## Notifications
 
