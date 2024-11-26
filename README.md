@@ -83,6 +83,9 @@ Generate a simple layout with shadcn components for stock monitoring:
 - Add from & subsribe logic
 - Add email notification
 - Add Posthog
+- Deploy to render (stock-data)
+- Deploy to cloudflare (stock-monitor)
+
 
 # Final words
 
