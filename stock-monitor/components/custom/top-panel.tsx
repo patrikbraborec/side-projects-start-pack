@@ -41,7 +41,7 @@ export const TopPanel = () => {
             <CheckCircle className="h-4 w-4 -mt-0.5 text-green-600" size={32} /> Subscribed!
           </AlertTitle>
           <AlertDescription>
-            You're already subscribed with the email:{" "}
+            You&apos;re already subscribed with the email:{" "}
             {stockMonitorSubscribeEmail}.
           </AlertDescription>
         </Alert>
@@ -60,6 +60,7 @@ export const TopPanel = () => {
             >
               <form.Field
                 name="email"
+                // @eslint-disable-next-line @react/no-children-prop
                 children={(field) => (
                   <Input
                     type="email"
