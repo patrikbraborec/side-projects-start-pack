@@ -10,6 +10,8 @@ import { useForm } from "@tanstack/react-form";
 import { sendEmail } from "@/services/emails";
 import { usePostHog } from "posthog-js/react";
 
+export const runtime = 'edge'
+
 export const TopPanel = () => {
   const posthog = usePostHog();
   const [stockMonitorSubscribeEmail, setStockMonitorSubscribeEmail] =
