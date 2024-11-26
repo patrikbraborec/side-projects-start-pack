@@ -1,6 +1,6 @@
 import { restClient } from "@polygon.io/client-js";
 import { createClient } from "@supabase/supabase-js";
-import { format, subDays, parse } from "date-fns";
+import { format, subDays, parse, isWeekend } from "date-fns";
 
 const TICKER = "AAPL";
 
@@ -11,7 +11,12 @@ const supabaseClient = createClient(
 );
 
 (async function () {
-  const yesterday = format(subDays(new Date(), 3), "yyyy-MM-dd");
+  const yesterday = format(subDays(new Date(), 1), "yyyy-MM-dd");
+
+  if (isWeekend(yesterday)) {
+    console.log("Skipping due to weekend");
+    return;
+  }
 
   try {
     const stockData = await polygonClient.stocks.dailyOpenClose(

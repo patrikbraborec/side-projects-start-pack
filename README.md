@@ -16,11 +16,13 @@ The tools that will help with speedy delivery:
 
 ### Next.js, React-Query, Tailwind & Shadcn
 
-I think that the combo is great, and will help you to build a application in couple of hours. 
+I think that the combo is great, and will help you to build a application in couple of hours.
 
 Tip: Try [v0.dev](https://v0.dev/)
 
-## Backend 
+Tip 2: Check all tran stack libraries, I use also form
+
+## Backend
 
 ### Supabase
 
@@ -36,7 +38,7 @@ I found out that the best thing is to write simple scripts for simple tasks. For
 
 The interesting thing is Bun (A fast JavaSript runtime similar to Node.js). It is:
 
-- Super fast 
+- Super fast
 - Work out of the box with TypeScript
 - Have nice project initializer (these who initialized typescript project will know that it is pain)
 
@@ -50,7 +52,13 @@ The most simple thing to send emails nowadays is to use Resend.
 
 ## Analytics
 
-For product analytics, the [Posthog](https://posthog.com/) is just the best. The best feature you will find useful is Session replay (you will actually see how your users use the app). If you want to see how many people saw your landing page, I can encourage you [plausible.io](https://plausible.io/) (PS: you do not need to use cookie bar)
+For product analytics, the [Posthog](https://posthog.com/) is just the best. The best feature you will find useful is Session replay (you will actually see how your users use the app).
+
+Use reverse proxy to capture all events...
+
+Tip:  If you want to see how many people saw your landing page, I can encourage you [plausible.io](https://plausible.io/) (PS: you do not need to use cookie bar). 
+
+Tip 2: Cloudflare has also analytics.
 
 # The Application
 
@@ -71,6 +79,10 @@ Generate a simple layout with shadcn components for stock monitoring:
 - Frontend is ready (from UI perspective), its time to fetch stock data
 - Initialized Bun, create simple script to get stock data (polygon.io - the first result in google by typing stock data api)
 - Install Supabase & React Query
+- Connect data to stock monitor
+- Add from & subsribe logic
+- Add email notification
+- Add Posthog
 
 # Final words
 

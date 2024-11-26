@@ -6,7 +6,7 @@ export const getStocks = async () => {
   const { data, error } = await supabase
     .from("stocks")
     .select("*")
-    .order("timestamp", { ascending: false });
+    .order("timestamp", { ascending: true });
 
   if (error) {
     throw new Error(error.message);
