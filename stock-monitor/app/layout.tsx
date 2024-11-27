@@ -16,8 +16,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Side Project Starter Pack",
-  description: "Side Project Starter Pack",
+  title: "Side Projects Starter Pack",
+  description: "Side Projects Starter Pack",
 };
 
 export default function RootLayout({
