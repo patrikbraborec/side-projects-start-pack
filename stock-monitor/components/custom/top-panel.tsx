@@ -1,19 +1,25 @@
 "use client";
 
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, RefreshCcw } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import { Input } from "../ui/input";
 import { useLocalStorage } from "@uidotdev/usehooks";
 import { useForm } from "@tanstack/react-form";
-import { sendEmail } from "@/services/emails";
 import { usePostHog } from "posthog-js/react";
-
-export const runtime = 'edge'
+import { useMutation } from "@tanstack/react-query";
 
 export const TopPanel = () => {
   const posthog = usePostHog();
+  const sendEmailMutation = useMutation({
+    mutationFn: async (email: string) => {
+      await fetch("/api/send", {
+        method: "POST",
+        body: JSON.stringify({ email }),
+      });
+    },
+  });
   const [stockMonitorSubscribeEmail, setStockMonitorSubscribeEmail] =
     useLocalStorage<string | undefined>("stock-monitor-subscribe");
   const form = useForm({
@@ -23,11 +29,10 @@ export const TopPanel = () => {
     onSubmit: async ({ value }) => {
       const email = value.email;
 
-      setStockMonitorSubscribeEmail(email);
-      posthog.identify(email);
-
       try {
-        await sendEmail(email);
+        await sendEmailMutation.mutateAsync(email);
+        setStockMonitorSubscribeEmail(email);
+        posthog.identify(email);
       } catch (error) {
         console.error(error);
       }
@@ -40,7 +45,8 @@ export const TopPanel = () => {
       {!shouldRenderForm && (
         <Alert className="mb-4 h-24 flex flex-col justify-center">
           <AlertTitle className="font-bold flex items-center gap-2">
-            <CheckCircle className="h-4 w-4 -mt-0.5 text-green-600" size={32} /> Subscribed!
+            <CheckCircle className="h-4 w-4 -mt-0.5 text-green-600" size={32} />{" "}
+            Subscribed!
           </AlertTitle>
           <AlertDescription>
             You&apos;re already subscribed with the email:{" "}
@@ -75,7 +81,17 @@ export const TopPanel = () => {
                   />
                 )}
               />
-              <Button type="submit">Subscribe</Button>
+              <Button
+                type="submit"
+                disabled={sendEmailMutation.isPending}
+                className="w-64"
+              >
+                {sendEmailMutation.isPending ? (
+                  <RefreshCcw className="animate-spin" />
+                ) : (
+                  "Subscribe"
+                )}
+              </Button>
             </form>
           </CardContent>
         </Card>
