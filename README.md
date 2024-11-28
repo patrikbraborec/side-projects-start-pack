@@ -1,26 +1,24 @@
 # Side Projects Starter Pack
 
-I worked on few side projects over past years, and identified that the most important thing is to get things done very quickly to validate the idea. The best thing is that you can do it very quickly nowadays, not just because of large language models (AI), but mainly because of many existing tools with great developer experience. The following post summarize the tooling you can use to create prototypes of end-to-end application.
+I have worked on a few side projects over the past few years and have identified that the most important thing is to get things done quickly to validate an idea. The best part is that you can do this very fast nowadays, not just because of large language models (AI), but mainly because of the many existing tools with great developer experiences. The following post summarizes the tools you can use to create prototypes of end-to-end applications.
 
-# Example Application
+## The Example Application
 
-In order to demonstrate such a capability, I will show it on the application that will track stock price, summarize messages about particular stock in a feed, and send notification through email. As I believe it is very important to measure whatever the idea of the app is succesful, the analytics will be in place as well!
+To demonstrate this capability, I will showcase it in an application that tracks stock prices, summarizes messages about particular stocks in a feed, and sends emails. Since I believe it is very important to measure whether the app's idea is successful, analytics will also be implemented!
 
-# Architecture
+## Tools
 
-The following tools are chosen with just one metric in head: time to market; it means how fast the application will be live in front of users.
+The following tools are chosen based on a single metric: **time to market**, which measures how quickly the application will be available to users.
 
-## Client / Frontend
+## Client
 
-The tools that will help with speedy delivery:
+### Next.js, React Query, Tailwind & Shadcn
 
-### Next.js, React-Query, Tailwind & Shadcn
+I think that this combo is great and will help you build an application in a couple of hours.
 
-I think that the combo is great, and will help you to build a application in couple of hours.
+Tip 1: Try [v0.dev](https://v0.dev/). It generated the entire UI for the example application.
 
-Tip: Try [v0.dev](https://v0.dev/)
-
-Tip 2: Check all tran stack libraries, I use also form
+Tip 2: Check all [TanStack libraries](https://tanstack.com/); I also use [TanStack From](https://tanstack.com/form/latest).
 
 ## Backend
 
@@ -32,61 +30,42 @@ I think that Supabase will solve 80-90% of your initial backend needs out of the
 - Authentication
 - Storage (if you need to upload things like images)
 
+Also, theirs GraphQL-like queries are awesome!
+
 ### Bun
 
-I found out that the best thing is to write simple scripts for simple tasks. For example, if you just need to get data from somewhere, and store it. Remember, the important thing is time to market; not to make it perfect. Also, with todays infrastructure tolls, it is simpler than ever.
+I found that the best approach is to write simple scripts for simple tasks, such as getting data from somewhere and storing it. Remember, the important thing is **time to market**, not to make it perfect. With today's infrastructure tools, it is simpler than ever.
 
-The interesting thing is Bun (A fast JavaSript runtime similar to Node.js). It is:
+The interesting thing is [Bun](https://bun.sh/) (a fast JavaScript runtime similar to Node.js). It is:
 
 - Super fast
-- Work out of the box with TypeScript
-- Have nice project initializer (these who initialized typescript project will know that it is pain)
+- Works out of the box with TypeScript
+- Has a nice project initializer (those who have initialized TypeScript projects will know that it is a pain)
 
 ## Infrastructure
 
-The best thing is to use GitHub for source code control, and then based on your need you can use variety of tools. I mostly prefer [Cloudflare](https://www.cloudflare.com/) and [render.com](https://render.com/) (I run cron job over here)
+The best approach is to use GitHub for source code control, and then, based on your needs, you can use a variety of tools. I mostly prefer [Cloudflare](https://www.cloudflare.com/) and [Render](https://render.com/) (I run cron jobs over here).
+
+Tip 1: Cloudflare offers very generous [free hosting](https://www.cloudflare.com/plans/developer-platform/).
 
 ## Notifications
 
-The most simple thing to send emails nowadays is to use Resend.
+The simplest way to send emails nowadays is to use [Resend](https://resend.com/).
 
 ## Analytics
 
-For product analytics, the [Posthog](https://posthog.com/) is just the best. The best feature you will find useful is Session replay (you will actually see how your users use the app).
+For product analytics, [Posthog](https://posthog.com/) is simply the best. The best feature you will find useful is Session Replay (you will actually see how your users use the app).
 
-Use reverse proxy to capture all events...
+Tip 1: If you want to see how many people saw your landing page, I encourage you to use [plausible.io](https://plausible.io/) (PS: you do not need to use a cookie bar).
 
-Tip:  If you want to see how many people saw your landing page, I can encourage you [plausible.io](https://plausible.io/) (PS: you do not need to use cookie bar). 
+Tip 2: Cloudflare also has analytics.
 
-Tip 2: Cloudflare has also analytics.
+Tip 3: Be sure to use a reverse proxy with Posthog. Next.js makes it simple to configure.
 
-# The Application
+## The Application
 
-## Changelog (remove later)
+If you are interested, you can check out the application: [Side Projects Starter Pack](https://side-projects-starter-pack.pages.dev/).
 
-- Install next.js with shadcn (https://ui.shadcn.com/docs/installation/next)
-- Use v0.dev (https://v0.dev/chat/wtf4251qtxJ):
+## Final Words
 
-```
-Generate a simple layout with shadcn components for stock monitoring:
-
-- It should be responsive
-- It should have left and right panel (left panel for stock name and grapth, right panel for news feed)
-```
-
-- Simple app made in ~5 minutes (thanks to right tools).
-- Add chart (https://ui.shadcn.com/docs/components/chart#add-a-grid) (< 5 minutes)
-- Frontend is ready (from UI perspective), its time to fetch stock data
-- Initialized Bun, create simple script to get stock data (polygon.io - the first result in google by typing stock data api)
-- Install Supabase & React Query
-- Connect data to stock monitor
-- Add from & subsribe logic
-- Add email notification
-- Add Posthog
-- Deploy to render (stock-data)
-- Deploy to cloudflare (stock-monitor)
-
-
-# Final words
-
-Everyday it gets more easy to build the prototype of the app. I think it's still little bit naive that everyone can build the app, but we are getting there!
+Thanks for reading! Jf you want to support my work, you can fill [the very short survey](https://tally.so/r/3l0jVo). It would mean a lot to me!
