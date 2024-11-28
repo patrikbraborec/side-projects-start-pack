@@ -68,4 +68,4 @@ If you are interested, you can check out the application: [Side Projects Starter
 
 ## Final Words
 
-Thanks for reading! Jf you want to support my work, you can fill [the very short survey](https://tally.so/r/3l0jVo). It would mean a lot to me!
+Thanks for reading! If you want to support my work, you can fill [the very short survey](https://tally.so/r/3l0jVo). It would mean a lot to me!
