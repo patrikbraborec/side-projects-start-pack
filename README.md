@@ -34,7 +34,7 @@ Also, theirs GraphQL-like queries are awesome!
 
 ### Bun
 
-I found that the best approach is to write simple scripts for simple tasks, such as getting data from somewhere and storing it. Remember, the important thing is **time to market**, not to make it perfect. With today's infrastructure tools, it is simpler than ever.
+I found that the best approach is to write simple scripts for simple tasks, such as getting data from somewhere and storing it. Remember, the important thing is **time to market**, not to make it perfect.
 
 The interesting thing is [Bun](https://bun.sh/) (a fast JavaScript runtime similar to Node.js). It is:
 
